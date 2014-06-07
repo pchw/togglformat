@@ -1,22 +1,10 @@
+'use strict';
 jQuery.noConflict();
 !function(w, d, $) {
 $(function() {
+  var val = '';
   var $main = $('#time-entry-list');
   if(!$main.length) return;
-  var modalName = 'chaikaToggleFormatModal',
-      $modal = $('<div style="position:fixed;top: 0;left:0;width:100%;height:100%;z-index:1000;">' +
-        '<div style="position:absolute;background:rgba(0,0,0,.5);width:100%;height:100%;"></div>' +
-        '<div style="position:relative;display:table;width:100%;height:100%;">' +
-          '<div class="' + modalName + '" style="display:table-cell;padding:0 25px;vertical-align: middle;"><a href="#" class="modalCloseBtn" style="display:inline-block;position:absolute;right:50px;color:#FFF;font-weight:bold;background:#E41A1A;margin-top:10px;padding:5px 10px;">\u00d7 Close</a></div>' +
-        '</div>' +
-      '</div>'),
-      $textarea = $('<textarea style="padding:20px;min-height:70%;"></textarea>'),
-      val = '';
-
-  $modal.on('click', '.modalCloseBtn', function(){
-    $modal.remove();
-    return false;
-  }).appendTo('body').find('.'+modalName).append($textarea);
 
   $('#time-entry-list').find('.time-entries-day').each(function(i, elm) {
     var $e = $(elm),
@@ -54,6 +42,10 @@ $(function() {
   });
 
   val += "---------------------------";
-  $textarea.val(val).focus();
+  chrome.runtime.sendMessage(
+    {"logs": val,},
+    function(response) {
+      console.log('message sent');
+  });
 });
 }(window, document, jQuery);

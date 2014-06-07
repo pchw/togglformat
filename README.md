@@ -1,4 +1,4 @@
 togglformat
 ===========
 
-Bookmarklet to format the Toggl timer.
+Toggl log formatter.

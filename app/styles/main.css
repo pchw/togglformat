@@ -1,0 +1,28 @@
+body {
+  padding: 20px;
+  background: rgba(0,0,0,.5);
+}
+
+.chaikaToggleFormatModal {
+  display:table-cell;
+  padding:0 25px;
+  vertical-align: middle;  
+}
+
+.modalCloseBtn {
+ display:inline-block;
+ position:absolute;
+ right:50px;
+ color:#FFF;
+ font-weight:bold;
+ background:#E41A1A;
+ margin-top:10px;
+ padding:5px 10px; 
+}
+
+.logarea {
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  min-height: 70%;
+}

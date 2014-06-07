@@ -1,0 +1,8 @@
+{
+  "name": "togglformat",
+  "version": "0.0.0",
+  "dependencies": {
+    "momentjs": "~2.6.0"
+  },
+  "devDependencies": {}
+}
